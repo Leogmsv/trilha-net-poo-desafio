@@ -1,26 +1,11 @@
-namespace DesafioPOO.Models
-{
-    public abstract class Smartphone
+public class Iphone : Smartphone
     {
-        public string Numero { get; set; }
-        // TODO: Implementar as propriedades faltantes de acordo com o diagrama
-
-        public Smartphone(string numero)
+        public Iphone(string numero, string modelo, string imei, int memoria) : base(numero, modelo, imei, memoria)
         {
-            Numero = numero;
-            // TODO: Passar os parâmetros do construtor para as propriedades
-        }
 
-        public void Ligar()
+        }
+        public override void InstalarAplicativo(string NomeApp)
         {
-            Console.WriteLine("Ligando...");
+            Console.WriteLine($"Instalando o aplicativo \"{NomeApp}\" no Iphone");
         }
-
-        public void ReceberLigacao()
-        {
-            Console.WriteLine("Recebendo ligação...");
-        }
-
-        public abstract void InstalarAplicativo(string nomeApp);
     }
-}
